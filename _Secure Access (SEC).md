@@ -523,14 +523,14 @@ conf t
 &nbsp;
 
 
-### Task 2: Prevent traffic coming from the PC (10.71.1.10) and the EDGE Router from reaching UTM-PH (10.71.1.11)
+### Task 2: Prevent traffic coming from the PC (10.71.1.10) and the EDGE Router (10.71.71.1) from reaching UTM-PH (10.71.1.11)
 ~~~
 !@UTM-PH
 config t
  no ip access-list extended FWP2
  ip access-list extended FWP2
-  deny ip  __.__.__.__    __.__.__.__    __.__.__.__    __.__.__.__  log
-  
+  deny ip host 10.71.1.10 host 10.71.1.11 log
+  deny ip host 10.71.71.1 host 10.71.1.11 log
   permit ip any any
   exit
  !
