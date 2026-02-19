@@ -532,7 +532,8 @@ config t
   deny ip host 10.71.1.10 host 10.71.1.11 log
   deny ip host 10.71.71.1 host 10.71.1.11 log
   permit ip any any
-  exit
+ exit
+
  !
  int gi 4
   ip access-group FWP2 in
@@ -950,8 +951,8 @@ conf t
 conf t
  ip nat inside source static tcp  10.71.1.4  23  200.0.0.71  4023
  !
- ip nat inside source static tcp  10.71.1.4  __  __.__.__.__     __
- ip nat inside source static tcp  10.71.1.4  __  __.__.__.__     __
+ ip nat inside source static tcp  10.71.100.8 23 200.0.0.71 4023
+ ip nat inside source static tcp  10.71.1.6 22 200.0.0.71 4023
  end
 ~~~
 
